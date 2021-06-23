@@ -42,14 +42,8 @@ func main() {
 	// card->iter object
 	// */
 
-	cards := deck{"Ace of Diamonds",newCard()} //a slice of type string	
-	cards = append(cards, "Six of Spades") //does not modify, returns new
+	cards := newDeck()
 	
 	cards.print()
 
-
-}
-
-func newCard () string {
-	return "Five of Diamonds"
 }
