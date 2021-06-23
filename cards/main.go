@@ -17,12 +17,41 @@ func main() {
 	
 	*/
 	
-	card := "Ace of Spades"
+	// card := "Ace of Spades"
 	// := for NEW VARIABLE, initialisation
 
-	card = "Five of Diamonds"
+	// card = "Five of Diamonds"
 	// = for REASSGINMENT
 
-	fmt.Println(card)
 
+	// card := newCard()
+	// fmt.Println(card)
+
+	// cards := []string{"Ace of Diamonds",newCard()} //a slice of type string	
+	// cards = append(cards, "Six of Spades") //does not modify, returns new
+	
+	// for i,card:=range cards {
+	// 	fmt.Println(i,card)
+	// }
+	
+	// /*
+	// for index,card := range cards{
+
+	// }
+	// index->index of the iter
+	// card->iter object
+	// */
+
+	cards := deck{"Ace of Diamonds",newCard()} //a slice of type string	
+	cards = append(cards, "Six of Spades") //does not modify, returns new
+	
+	for i,card:=range cards {
+		fmt.Println(i,card)
+	}
+
+
+}
+
+func newCard () string {
+	return "Five of Diamonds"
 }
