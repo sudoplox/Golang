@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+// import "fmt"
 
 func main() {
 
@@ -45,9 +45,7 @@ func main() {
 	cards := deck{"Ace of Diamonds",newCard()} //a slice of type string	
 	cards = append(cards, "Six of Spades") //does not modify, returns new
 	
-	for i,card:=range cards {
-		fmt.Println(i,card)
-	}
+	cards.print()
 
 
 }
