@@ -11,25 +11,10 @@ func main() {
 	card-> name
 	string-> only string type will be assigned ever
 	
-	go is statically typed language like c++, java
-
 	available types -> bool, string, int, float64
 	
 	*/
-	
-	// card := "Ace of Spades"
-	// := for NEW VARIABLE, initialisation
 
-	// card = "Five of Diamonds"
-	// = for REASSGINMENT
-
-
-	// card := newCard()
-	// fmt.Println(card)
-
-	// cards := []string{"Ace of Diamonds",newCard()} //a slice of type string	
-	// cards = append(cards, "Six of Spades") //does not modify, returns new
-	
 	// for i,card:=range cards {
 	// 	fmt.Println(i,card)
 	// }
@@ -44,6 +29,8 @@ func main() {
 
 	cards := newDeck()
 	
-	cards.print()
+	hand,remainingDeck := deal(cards,5)
+	hand.print()
+	remainingDeck.print()
 
 }

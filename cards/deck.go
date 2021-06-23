@@ -5,6 +5,8 @@ package main
 import "fmt"
 type deck []string // this new deck type, extends slice of string properties
 
+ 
+
 func newDeck() deck {
 	cards := deck{}
 
@@ -32,3 +34,8 @@ func (d deck) print(){
 	}
 	
 }
+
+func deal(d deck,handSize int) (deck, deck) {
+	return d[ :handSize ],d[ handSize: ]
+}
+
