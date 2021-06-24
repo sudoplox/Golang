@@ -29,8 +29,7 @@ func main() {
 	// card->iter object
 	// */
 
-	cards := newDeck()
-	cards.saveToFile("my_cards")
-	// fmt.Println(cards.toString())
+	cards := newDeckFromFile("my")
+	cards.print()	
 
 }
