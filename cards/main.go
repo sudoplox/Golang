@@ -29,7 +29,7 @@ func main() {
 	// card->iter object
 	// */
 
-	cards := newDeckFromFile("my")
-	cards.print()	
-
+	cards := newDeck()
+	cards.shuffle()
+	cards.print()
 }

@@ -5,8 +5,10 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 type deck []string // this new deck type, extends slice of string properties
@@ -66,4 +68,14 @@ func newDeckFromFile(filename string) deck {
 	}
 	ss := strings.Split( string(bs), "," ) //Ace of Spades,Two o....
 	return deck(ss)
+}
+
+func (d deck) shuffle(){
+	source := rand.NewSource(time.Now().UnixNano()) // pull in the current time
+	r := rand.New(source)
+
+	for i := range d{
+		newPosition := r.Intn( len(d)-1 ) 
+		d[i],d[newPosition]=d[newPosition],d[i]
+	}
 }
