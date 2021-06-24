@@ -24,8 +24,7 @@ func main() {
 			zipCode : 110021,
 		},
 	}
-	jimPointer := &jim 	//give the memory address of the variabel
-	jimPointer.updateName("jimmy")
+	jim.updateName("jimmy") // auto person to person pointer shortcut
 	jim.print()
 }
 // turn address into value 		with 	*address
