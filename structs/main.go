@@ -38,7 +38,6 @@ func (pointerToPerson *person) updateName(newFirstName string){
 	(*pointerToPerson).firstName = newFirstName // give the value at that memory address
 }
 
-
 func (p person) print(){
 	fmt.Printf("%+v",p)
 }
