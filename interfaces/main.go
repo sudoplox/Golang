@@ -7,7 +7,6 @@ type bot interface{
 	//fun_name(arg_type) return_type
 	getGreeting() string 
 	
-
 	// if you are a type and you have a function called
 	// getGreeting and u return a string, 
 	// then you can be called a bot
