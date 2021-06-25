@@ -8,16 +8,19 @@ import (
 func main() {
 
 	//map[key type]value_type
-	var colors1 map[string]string
-	//or
-	colors2 := make(map[string]string)
 
-	// colors := map[string]string{
-	// 	"red": "#ff0000",
-	// 	"green": "#fbf723",
-	// }
-	colors2["white"] = "#ff0000"
+	colors := map[string]string{
+		"red": "#ff0000",
+		"green": "#fbf723",
+		"white": "#ffffff",
+	}
 
-	delete(colors2,"white") //to delete a pair in map
-	fmt.Println(colors1,colors2)
+	fmt.Println(colors)
+	printMap(colors)
+}
+
+func  printMap(c map[string]string){
+	for col,hex := range c{
+		fmt.Println("Hex code for",col,"is:",hex)
+	}
 }
