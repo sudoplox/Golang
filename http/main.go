@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 )
@@ -13,8 +14,10 @@ func main() {
 		fmt.Println("Error:",err)
 		os.Exit(1)
 	}
-	bs := make([]byte,99999) //number of initialised values
-	resp.Body.Read(bs)
-	fmt.Println(string(bs))
+
+	io.Copy(os.Stdout,resp.Body)	
+	// os.Stdout implements Writer interface
+	// resp.Body implements Reader interface
+
 	
 }
