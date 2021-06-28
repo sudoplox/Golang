@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
-
+	"time"
 )
 
 
@@ -23,18 +23,23 @@ func main() {
 	}
 	// fmt.Println( <- c ) // wait for value to be sent into the channel, when we get then log it immediately
 	
-	for i := 0; i < len(links); i++ {
-		fmt.Println(<-c)
+	for l := range c {
+		go checkLink( l,c)
+		
 	}
 }
 
 func checkLink(link string, c chan string){
 	_,err := http.Get(link)
+	
+	time.Sleep(time.Second)
+
 	if err != nil {
 		fmt.Println(link,"might be down!")
-		c <- "might be down!" // send string to the channel c
+		c <- link // send string to the channel c
 		return
 	}
+	
 	fmt.Println(link,"is up!")
-	c <- "Yup it's up!"	// send string to the channel c
+	c <- link	// send string to the channel c
 }
