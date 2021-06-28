@@ -21,7 +21,11 @@ func main() {
 		// put go keyword infront of function calls
 
 	}
-	fmt.Println( <- c ) // wait for value to be sent into the channel, when we get then log it immediately
+	// fmt.Println( <- c ) // wait for value to be sent into the channel, when we get then log it immediately
+	
+	for i := 0; i < len(links); i++ {
+		fmt.Println(<-c)
+	}
 }
 
 func checkLink(link string, c chan string){
